@@ -1,0 +1,42 @@
+2017-03-13 05:00:21 Notice: Deprecated (16384): SessionHelper has been deprecated. Use request->session() instead. in [/home/ricardo/workspace/adminFut/app/vendor/cakephp/cakephp/src/View/Helper/SessionHelper.php, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+Cake\View\Helper\SessionHelper::__construct() - CORE/src/View/Helper/SessionHelper.php, line 39
+Cake\View\HelperRegistry::_create() - CORE/src/View/HelperRegistry.php, line 145
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\View\View::loadHelper() - CORE/src/View/View.php, line 1043
+Cake\View\View::loadHelpers() - CORE/src/View/View.php, line 946
+Cake\View\View::__construct() - CORE/src/View/View.php, line 348
+Cake\View\ViewBuilder::build() - CORE/src/View/ViewBuilder.php, line 629
+Cake\Controller\Controller::createView() - CORE/src/View/ViewVarsTrait.php, line 118
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 622
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 321
+Cake\Error\ExceptionRenderer::render() - CORE/src/Error/ExceptionRenderer.php, line 196
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 137
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 187
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE/src/Error/BaseErrorHandler.php, line 171
+[main] - [internal], line ??
+
+
+
+2017-03-13 05:00:52 Notice: Deprecated (16384): SessionHelper has been deprecated. Use request->session() instead. in [/home/ricardo/workspace/adminFut/app/vendor/cakephp/cakephp/src/View/Helper/SessionHelper.php, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+Cake\View\Helper\SessionHelper::__construct() - CORE/src/View/Helper/SessionHelper.php, line 39
+Cake\View\HelperRegistry::_create() - CORE/src/View/HelperRegistry.php, line 145
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\View\View::loadHelper() - CORE/src/View/View.php, line 1043
+Cake\View\View::loadHelpers() - CORE/src/View/View.php, line 946
+Cake\View\View::__construct() - CORE/src/View/View.php, line 348
+Cake\View\ViewBuilder::build() - CORE/src/View/ViewBuilder.php, line 629
+Cake\Controller\Controller::createView() - CORE/src/View/ViewVarsTrait.php, line 118
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 622
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 321
+Cake\Error\ExceptionRenderer::render() - CORE/src/Error/ExceptionRenderer.php, line 196
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 137
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 187
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE/src/Error/BaseErrorHandler.php, line 171
+[main] - [internal], line ??
+
+
+
