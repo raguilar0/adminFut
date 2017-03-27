@@ -1,20 +1,20 @@
 # CakePHP 3
 
-/vendor/*
-/config/app.php
+/app/vendor/*
+/app/config/app.php
 
-/tmp/cache/models/*
+/app/tmp/cache/models/*
 !/tmp/cache/models/empty
-/tmp/cache/persistent/*
+/app/tmp/cache/persistent/*
 !/tmp/cache/persistent/empty
-/tmp/cache/views/*
+/app/tmp/cache/views/*
 !/tmp/cache/views/empty
-/tmp/sessions/*
+/app/tmp/sessions/*
 !/tmp/sessions/empty
-/tmp/tests/*
+/app/tmp/tests/*
 !/tmp/tests/empty
 
-/logs/*
+/app/logs/*
 !/logs/empty
 
 # CakePHP 2
