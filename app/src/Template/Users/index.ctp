@@ -1,19 +1,14 @@
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<div class="row text-center">
+	<div class="col-xs-12">
+		<h1>Administración de usuarios</h1>
+	</div>
+</div>
+<br>
+<br>
+
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <div class="table-responsive">
+    <table class="table read_association">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name', ["label"=>"Nombre"]) ?></th>
@@ -21,7 +16,7 @@
                 <th scope="col"><?= $this->Paginator->sort('rol_id') ?></th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Direccion</th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -33,14 +28,15 @@
                 <td><?= h($user->phone) ?></td>
                 <td><?= h($user->address) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                    <?= $this->Html->link(__(''), ['action' => 'view', $user->id],['class'=>'glyphicon glyphicon-eye-open btn btn-success']) ?>
+                    <?= $this->Html->link(__(''), ['action' => 'edit', $user->id],['class'=>'glyphicon glyphicon-pencil btn btn-primary']) ?>
+                    <?= $this->Form->postLink(__(''), ['action' => 'delete', $user->id], ['class'=>'glyphicon glyphicon-remove btn btn-danger','confirm' => __('Seguro que desea borrar esta caja?# {0}?', $user->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+  </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>

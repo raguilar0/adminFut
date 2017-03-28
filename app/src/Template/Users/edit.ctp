@@ -1,36 +1,26 @@
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<div class="row text-center">
+	<div class="col-xs-12">
+		<h1>Modificacion de usuarios</h1>
+	</div>
+</div>
+
+<br>
+
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Edit User') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('last_name');
-            echo $this->Form->control('username');
-            echo $this->Form->control('password');
-            echo $this->Form->control('rol_id', ['options' => $roles]);
-            echo $this->Form->control('phone');
-            echo $this->Form->control('address');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+    <div class="form-group">
+      <?= $this->Form->input('name', ['class' => 'form-control','label'=>'Nombre', 'value'=>$user['name'], 'maxlength'=> '20']); ?>
+      <?= $this->Form->input('last_name', ['class' => 'form-control','label'=>'Apellidos','value'=>$user['last_name'], 'maxlength'=> '50']); ?>
+      <?= $this->Form->input('phone', ['class' => 'form-control','label'=>'Telefono','value'=>$user['phone'], 'maxlength'=> '20']); ?>
+      <?= $this->Form->input('address', ['class' => 'form-control','label'=>'Direccion','value'=>$user['address'], 'maxlength'=> '20']); ?>
+      <?= $this->Form->input('username', ['class' => 'form-control','label'=>'Primer Apellido','value'=>$user['username'], 'maxlength'=> '0']); ?>
+    </div>
+
+
+
+    <div class="row text-center">
+      <div class="col-xs-12">
+          <?= $this->Html->link('Atrás', ['action' => 'modify'], ['class'=>'btn btn-primary']); ?>
+      </div>
+  </div>
 </div>

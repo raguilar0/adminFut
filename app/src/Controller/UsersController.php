@@ -1,7 +1,11 @@
 <?php
 namespace App\Controller;
 
+use Cake\Datasource\Exception\RecordNotFoundException;
+use Cake\ORM\TableRegistry;
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Controller
@@ -11,18 +15,39 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
-  
+  public function beforeFilter(Event $event)
+     {
+         parent::beforeFilter($event);
+         $this->Auth->allow('logout');
+     }
+
+
+
 
   public function login()
   {
-      if ($this->request->is('post')) {
-          $user = $this->Auth->identify();
-          if ($user) {
-              $this->Auth->setUser($user);
-              return $this->redirect($this->Auth->redirectUrl());
-          }
-          $this->Flash->error(__('Invalid username or password, try again'));
+
+    if(!$this->Auth->user()){
+        if ($this->request->is('post')) {
+
+            $user = $this->Auth->identify();
+            if ($user) {
+
+                if(!$user['state'] &&  $user['role'] === 'administrador'){
+                  $this->Auth->setUser($user);
+                  return $this->redirect($this->Auth->redirectUrl());
+                }
+                else{
+                  $this->Flash->error('Usuario o contraseña inválidos. Intente nuevamente.');
+                }
+            }
+            else{
+              $this->Flash->error('Usuario o contraseña inválidos. Intente nuevamente.');
+
+            }
+        }
       }
+
   }
 
   public function logout()
@@ -37,6 +62,7 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->layout('admin_view');
         $this->paginate = [
             'contain' => ['Roles']
         ];
@@ -55,6 +81,7 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
+        $this->viewBuilder()->layout('admin_view');
         $user = $this->Users->get($id, [
             'contain' => ['Roles']
         ]);
@@ -130,4 +157,7 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+
 }
